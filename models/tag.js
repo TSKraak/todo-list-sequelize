@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       tag.belongsToMany(models.todoItem, {
         through: "itemTags",
-        foreignKey: "tagId",
+        foreignKey: "tagId", // declared in itemTag migration
       });
     }
   }

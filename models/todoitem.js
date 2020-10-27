@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       todoItem.belongsTo(models.todoList);
       todoItem.belongsToMany(models.tag, {
         through: "itemTags",
-        foreignKey: "todoItemId",
+        foreignKey: "todoItemId", // declared in itemTag migration
       });
     }
   }
