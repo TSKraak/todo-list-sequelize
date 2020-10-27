@@ -1,4 +1,5 @@
 const User = require("./models").user;
+const TodoItem = require("./models").todoItem;
 
 async function createUserList() {
   try {
@@ -11,11 +12,9 @@ async function createUserList() {
 
 // createUserList().then((users) => console.log(users));
 
-const todoItem = require("./models").todoItem;
-
 async function createTodoItemList() {
   try {
-    const allTodoItems = await todoItem.findAll();
+    const allTodoItems = await TodoItem.findAll();
     return allTodoItems.map((item) => item.get({ plain: true }));
   } catch (e) {
     console.error(e);
@@ -54,7 +53,7 @@ async function createNewUser() {
 
 async function importantTodoItems() {
   try {
-    const importantTodos = await todoItem.findAll({
+    const importantTodos = await TodoItem.findAll({
       where: { important: true },
     });
     return importantTodos.map((item) => item.get({ plain: true }));
@@ -64,3 +63,32 @@ async function importantTodoItems() {
 }
 
 // importantTodoItems().then((todos) => console.log(todos));
+
+const newUser = async (myName, email, password) => {
+  try {
+    const newUser = await User.create({ name: myName, email, password });
+    console.log(newUser.get({ plain: true }));
+  } catch (e) {
+    console.log(e.message);
+  }
+};
+
+// newUser("Rein", "rein@r.com", "1234");
+
+// updating data
+const changeName = async (id, newName) => {
+  const userToUpdate = await User.findByPk(id);
+  // maybe the guy doesn't exist => 404
+  await userToUpdate.update({ name: newName });
+  console.log(userToUpdate.get({ plain: true }));
+};
+
+// changeName(1, "kelley");
+
+// deleting data
+const deleteUser = async (id) => {
+  const userToDelete = await User.findByPk(id);
+  await userToDelete.destroy();
+};
+
+// deleteUser(1);

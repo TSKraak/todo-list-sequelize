@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      todoItem.belongsTo(models.todoList);
     }
   }
   todoItem.init(
@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       task: DataTypes.STRING,
       deadline: DataTypes.STRING,
       important: DataTypes.BOOLEAN,
+      todoListId: DataTypes.INTEGER,
     },
     {
       sequelize,

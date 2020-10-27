@@ -13,6 +13,22 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          name: "Steph Bergman",
+          email: "steph@bergman.com",
+          phone: 16464613,
+          password: "chicolate",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Ramin Kader",
+          email: "ramin@kader.com",
+          phone: 1472536,
+          password: "elkadir",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );
