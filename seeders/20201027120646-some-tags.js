@@ -6,7 +6,17 @@ module.exports = {
       "tags",
       [
         {
-          title: "Testing tags",
+          title: "Food",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          title: "Furniture",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          title: "Home",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

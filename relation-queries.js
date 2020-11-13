@@ -83,6 +83,6 @@ const getItemsWithTagById = async (id) => {
 
 const getItemsWithTag = async () => {
   const items = await TodoItem.findAll({ include: [Tag] });
-  console.log(items.map((item) => item.get({ plain: true }))[0].tags); // First index of array of todoItems and then show 'tags'
+  console.log(items.map((item) => item.get({ plain: true }))[0]); // First index of array of todoItems and then show 'tags'
 };
 getItemsWithTag();

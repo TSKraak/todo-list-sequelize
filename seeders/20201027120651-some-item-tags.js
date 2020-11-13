@@ -6,8 +6,38 @@ module.exports = {
       "itemTags",
       [
         {
-          todoItemId: 4,
+          todoItemId: 1,
           tagId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          todoItemId: 2,
+          tagId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          todoItemId: 1,
+          tagId: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          todoItemId: 2,
+          tagId: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          todoItemId: 3,
+          tagId: 3,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          todoItemId: 4,
+          tagId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
